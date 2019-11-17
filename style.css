@@ -1,0 +1,121 @@
+button{
+    font-size: 2em;
+    background: #3498db;
+    border: .25rem solid #3498db;
+    padding: 0.85em 0.75em;
+    margin: 1rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+button:hover{
+    color: #3498db;
+}
+button::after{
+    content: '';
+    background: #eff0f1;
+    position: absolute;
+    z-index: -1;
+    padding: 0.85em 0.75em;
+    display: block;
+}
+button[class^="slide"]::after{
+    transition: all 3.5s;
+}
+button[class^="slide"]:hover::after{
+    left: 0px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.35s;
+}
+button.slide-from-left::after{
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+}
+button.slide-from-right::after{
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+}
+button.slide-from-top::after{
+    top: -100%;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+}
+button.slide-from-bottom::after{
+    top: 100%;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+}
+button[class^="grow"]::after{
+    transition: all 0.3s ease;
+}
+button[class^="grow"]:hover::after{
+    transition:all 0.3 ease-out;
+}
+button.grow-box::after{
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    transform: scale(0,0);
+    transition: .60s;
+}
+button.grow-box:hover::after{
+    transform: scale(1,1);
+}
+button.grow-ellipse::after{
+    border-radius: 50%;
+    left: -50%;
+    right: -50%;
+    top: -150%;
+    bottom:-150%;
+    transform: scale(0,0);
+    transition: 1s;
+}
+button.grow-ellipse:hover::after{
+    transform: scale(1,1);
+    transition: all 2s;
+}
+button.grow-skew-forward::after{
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0,0);
+    transition: .50s;
+}
+button.grow-skew-forward:hover::after{
+    transform: skewX(-45deg) scale(1,1);
+    transition: all 2s;
+}
+button.grow-skew-backward::after{
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(45deg) scale(0,0);
+    transition: .50s;
+}
+button.grow-skew-backward:hover::after{
+    transform: skewX(45deg) scale(1,1);
+    transition:all 2s;
+}
+button.grow-spin::after{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(0,0) rotate(-720deg);
+    transition: .5s;
+}
+button.grow-spin:hover::after{
+    transform: scale(1,1) rotate(720deg);
+    transition: 2s;
+}
